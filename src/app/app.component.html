@@ -49,7 +49,7 @@
             <input [(ngModel)]="movieToAdd.releaseDate" name="movieToAdd.releaseDate" type="text" class="form-control" id="releaseDateInput">
           </div>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -59,18 +59,18 @@
   </div>
 </div>
 
-<div *ngIf="movieToEdit" class="modal fade" id="editMovieModal" tabindex="-1" role="dialog" aria-labelledby="editMovieModalLabel"
-  aria-hidden="true">
+<div class="modal fade" id="editMovieModal" tabindex="-1" role="dialog" aria-labelledby="editMovieModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editMovieModalLabel">Edit movie</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form (submit)="editMovie(movieToEdit._id, movieToEdit)">
+      <form (submit)="editMovie(movieToEdit._id, movieToEdit)">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editMovieModalLabel">Edit movie</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
           <div class="form-group">
             <label for="titleInput">Title</label>
             <input [(ngModel)]="movieToEdit.title" name="title" type="text" class="form-control" id="titleInput">
@@ -83,13 +83,13 @@
             <label for="releaseDateInput">Release Date</label>
             <input [(ngModel)]="movieToEdit.releaseDate" name="releaseDate" type="text" class="form-control" id="releaseDateInput">
           </div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </form>
-      </div>
-      <div class="modal-footer">
 
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" #closeBtn>Save changes</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

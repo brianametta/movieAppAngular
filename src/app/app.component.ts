@@ -8,7 +8,11 @@ import * as $ from "jquery";
 })
 export class AppComponent {
   movies: Array<any>;
-  movieToEdit: Array<any>; //todo you can get rid of the ng if bug
+  movieToEdit = {
+    title: "",
+    director: "",
+    releaseDate: ""
+  };
   movieToAdd = {
     title: "",
     director: "",
@@ -18,11 +22,6 @@ export class AppComponent {
   constructor(private _dataService: DataService) {
     this._dataService.getMovies().subscribe(res => (this.movies = res));
   }
-
-  // addMovie(movieToAdd) {
-  //   console.log(this.movieToAdd);
-  //   this._dataService.addMovie(movieToAdd);
-  // }
 
   addMovie(movieToAdd) {
     var newMovie = {
@@ -42,17 +41,14 @@ export class AppComponent {
   }
 
   editMovie(id, movieToEdit) {
-    console.log(this.movieToEdit);
     var updatedMovie = {
       title: movieToEdit.title,
       director: movieToEdit.director,
       releaseDate: movieToEdit.releaseDate
     };
-    // this._dataService.editMovie(id, updatedMovie).subscribe(movie => {
-    //   this.movies.push(movie);
-    // });
-    this._dataService.editMovie(id, updatedMovie).subscribe(function(data) {
-      //this.movies = data;
+
+    this._dataService.editMovie(id, updatedMovie).subscribe(data => {
+      this._dataService.getMovies().subscribe(res => (this.movies = res));
     });
   }
 }
