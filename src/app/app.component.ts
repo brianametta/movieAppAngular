@@ -51,4 +51,10 @@ export class AppComponent {
       this._dataService.getMovies().subscribe(res => (this.movies = res));
     });
   }
+
+  deleteMovie(id) {
+    this._dataService.deleteMovie(id).subscribe(data => {
+      this._dataService.getMovies().subscribe(res => (this.movies = res));
+    });
+  }
 }

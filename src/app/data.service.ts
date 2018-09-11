@@ -34,4 +34,10 @@ export class DataService {
       .put("/api/movies/" + id, movieData)
       .pipe(map(result => (this.result = result.json())));
   }
+
+  deleteMovie(id) {
+    return this._http
+      .delete("/api/movies/" + id)
+      .pipe(map(result => (this.result = result.json())));
+  }
 }
