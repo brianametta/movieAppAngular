@@ -6,7 +6,7 @@ To use the MongoDB database (set up to use the mLab MongoJS app), edit the api.j
 
 `var db = mongojs( "mongodb://[yourSpecialMongoJSLink]/[databaseName]", ["collectionName"] );`
 
-![Alt text](/src/assets/table.PNG)
+![Alt text](/src/assets/tableView.PNG)
 
 ![Alt text](/src/assets/add.PNG)
 
