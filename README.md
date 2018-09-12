@@ -6,6 +6,10 @@ var db = mongojs(
 ["collectionName"]
 );
 
+![Screenshot]\(../src/assets/table.PNG)
+![Screenshot]\(../src/assets/add.PNG)
+![Screenshot]\(../src/assets/edit.PNG)
+
 #Technology Used
 
 Express
