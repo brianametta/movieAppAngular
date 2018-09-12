@@ -4,10 +4,7 @@ A simple movie app that allows you to add, update, and delete a movie list throu
 
 To use the MongoDB database (set up to use the mLab MongoJS app), edit the api.js db variable with a link to your database in this format:
 
-var db = mongojs(
-"mongodb://[yourSpecialMongoJSLink]/[databaseName]",
-["collectionName"]
-);
+`var db = mongojs( "mongodb://[yourSpecialMongoJSLink]/[databaseName]", ["collectionName"] );`
 
 ![Alt text](/src/assets/table.PNG)
 
