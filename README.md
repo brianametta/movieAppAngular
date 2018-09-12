@@ -14,7 +14,10 @@ To use the MongoDB database (set up to use the mLab MongoJS app), edit the api.j
 
 ## Technology Used
 
-Express
+Angular CLI
+`npm install -g @angular/cli`
+
+Express & MongoDB (MongoJS)
 `npm install express body-parser ejs mongojs --save`
 
 Bootstrap
