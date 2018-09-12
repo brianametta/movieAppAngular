@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   addMovie(movieToAdd) {
-    var newMovie = {
+    let newMovie = {
       title: movieToAdd.title,
       director: movieToAdd.director,
       releaseDate: movieToAdd.releaseDate
@@ -34,6 +34,7 @@ export class AppComponent {
     });
   }
 
+  // Fills in edit form in view when user clicks to edit a movie.
   getMovieForEditing(id) {
     this._dataService
       .getMovieById(id)
@@ -41,7 +42,7 @@ export class AppComponent {
   }
 
   editMovie(id, movieToEdit) {
-    var updatedMovie = {
+    let updatedMovie = {
       title: movieToEdit.title,
       director: movieToEdit.director,
       releaseDate: movieToEdit.releaseDate
